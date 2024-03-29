@@ -1,0 +1,12 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block title "Edition recette " ~ recipe.title %}
+
+{% block body %}
+    <h1>{{ recipe.title }}</h1>
+
+    <img src="{{ vich_uploader_asset(recipe, 'thumbnailFile') }}" alt="{{ recipe.title }}" style="width: 300px">
+    <turbo-frame id="recipe-{{ recipe.id }}">
+        {{ form(form, {action: path('admin.recipe.edit', {slug: recipe.slug})}) }}
+    </turbo-frame>
+{% endblock %}

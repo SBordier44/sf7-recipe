@@ -1,0 +1,1 @@
+home_recipe_count: 'Il y a {count, plural, =0 {aucune recette} =1 {une recette} other {# recettes}}.'

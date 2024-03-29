@@ -1,0 +1,8 @@
+contactForm.name: __contactForm.name
+contactForm.email: __contactForm.email
+contactForm.message: __contactForm.message
+contactForm.service: __contactForm.service
+contactForm.serviceList.customer: __contactForm.serviceList.customer
+contactForm.serviceList.sales: __contactForm.serviceList.sales
+contactForm.serviceList.technical: __contactForm.serviceList.technical
+contactForm.send: __contactForm.send

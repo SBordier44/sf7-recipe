@@ -1,0 +1,43 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block title "Toutes les recettes" %}
+
+{% block body %}
+    <h1>Toutes les recettes</h1>
+    <a href="{{ path('admin.recipe.create') }}" class="btn btn-secondary btn-sm">Créer une recette</a>
+
+    <div id="flash"></div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>{{ knp_pagination_sortable(recipes, 'Titre', 'r.title') }}</th>
+            <th>{{ knp_pagination_sortable(recipes, 'Categorie', 'c.name') }}</th>
+            <th>Utilisateur</th>
+            <th style="width: 80px">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for recipe in recipes %}
+            <tr id="row_recipe_{{ recipe.id }}">
+                <td>
+                    <turbo-frame id="recipe-{{ recipe.id }}">
+                        <a href="{{ path('admin.recipe.edit', {slug: recipe.slug}) }}">{{ recipe.title }}</a>
+                    </turbo-frame>
+                </td>
+                <td>{{ recipe.category.name }}</td>
+                <td>{{ recipe.owner.email }}</td>
+                <td class="d-flex gap-1">
+                    <form action="{{ path('admin.recipe.delete', {slug: recipe.slug}) }}" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="d-flex">
+        {{ knp_pagination_render(recipes) }}
+    </div>
+{% endblock %}

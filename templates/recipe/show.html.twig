@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ recipe.title }}</h1>
+    <p class="text-center">
+        <img src="{{ asset('images/recipes/thumbnail/' ~ recipe.thumbnail) }}" alt="{{ recipe.title }}" style="width: 250px">
+    </p>
+    <p>
+        {{ recipe.content|raw }}
+    </p>
+{% endblock %}

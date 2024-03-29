@@ -1,0 +1,18 @@
+contactForm:
+  title: Contactez-nous
+  name: Nom
+  email: Courriel
+  message: Message
+  send: Envoyer
+  success: Votre message a été envoyé avec succès.
+  error: Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer plus tard.
+  service: Service
+  serviceList:
+    sales: Service Commercial
+    customer: Service Client
+    technical: Service Technique
+  validation:
+    name: Veuillez entrer votre nom.
+    email: Veuillez entrer une adresse de courriel valide.
+    message: Veuillez entrer un message.
+welcome: Bienvenue name !
